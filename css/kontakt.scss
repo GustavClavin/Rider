@@ -1,0 +1,94 @@
+@import './global';
+*{
+    text-decoration: none;
+}
+@mixin hover {
+    .input:hover {
+        transition: .15s;
+        border: 2px solid $rider-black;
+    }
+}
+@mixin focus {
+    .input:focus{
+        transition: .15s;
+        border: 2px solid $rider-black;
+    }
+}
+
+main{
+    @include hover;
+    flex: 1;
+    width: 100%;
+    padding: 5vh 0;
+    gap: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $rider-light-grey;
+    z-index: 1;
+    
+    section{
+        width: 90vw;
+        margin: 0 auto;
+        background-color: $rider-white;
+        border-radius: .75rem;
+        padding: .75rem;
+        font-family: $text-font;
+        box-shadow: 0 0 .75rem $rider-black;
+        h2{
+            font-family: $bold-font;
+        }
+        img{
+            max-width: 100%;
+        }
+        ul{
+            font-size: 14px;
+        }
+    }
+    form{
+        box-shadow: 0 0 .75rem $rider-black;
+        width: 90vw;
+        margin: 0 auto;
+        font-family: $bold-font;
+        font-weight: bold;
+        
+        background-color: $rider-white;
+        border-radius: .75rem;
+        padding: .75rem;
+        display: flex;
+        flex-direction: column;
+        
+        
+        .btn{
+            margin: 0 auto;
+            font-family: $bold-font;
+            font-weight: bold;
+            font-size: 24px;
+            color: $rider-white;
+            background-color: $rider-black;
+            border: none;
+            border-radius: .5rem;
+            height: 50px;
+            width: 150px;
+        }
+        .input{
+            font-family: $text-font;
+            border-radius: .25rem;
+            padding: 3px 0 3px 3px;
+            border: 2px solid $rider-grey;
+        }
+    }
+    @media screen and (min-width: 960px){
+        section{
+            width: 900px;
+        }
+        form{
+            width: 700px;
+            padding: 50px 112px;
+            .input{
+                font-size: 16px;
+            }
+        }
+    }
+
+}

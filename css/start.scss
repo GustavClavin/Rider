@@ -1,0 +1,143 @@
+@import './global';
+
+*{
+    text-decoration: none;
+}
+@mixin hover {
+    .small-card:hover {
+        transition: .15s;
+        transform: scale(1.025);
+        box-shadow: 0 0 1.5rem black;
+    }
+    .big-card:hover {
+        transition: .15s;
+        transform: scale(1.025);
+        box-shadow: 0 0 1.5rem black;
+    }
+}
+
+main{
+    @include hover;
+    flex: 1;
+    width: 100%;
+    padding-bottom: 5vh;
+    gap: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $rider-light-grey;
+    z-index: 1;
+    
+    .horizontal-scroll{
+        padding: 5vh 0 5vw;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        height: max-content;
+        
+    }
+    .horizontal-scroll::-webkit-scrollbar {
+        background-color: transparent;
+    }
+    .horizontal-scroll::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 .75rem $rider-black;
+        background-color: $rider-black;
+        border-radius: 1rem;
+    }
+    .horizontal-scroll::-webkit-scrollbar-track-piece {
+        margin-left: 5vw;
+        margin-right: 5vw; 
+        box-shadow: inset 0 0 .75rem $rider-black;
+        border-radius: 1rem;
+    }
+    .small-card{
+        display: inline-block;
+        width: 90vw;
+        //min-width: 347px;
+        margin: 0 5vw 0;
+        border-radius: .75rem;
+        box-shadow: 0 0 .75rem $rider-black;
+        color: $rider-black;
+        background-color: $rider-white;
+        white-space: normal;
+        
+        a{
+            display: flex;
+            padding: .75rem .75rem .75rem;
+            color: $rider-black;
+        }
+        img{
+            display: absolute;
+            width: 30%;
+            margin: auto .5rem 0 0;
+        }
+        li{
+            font-family: $text-font;
+            font-size: 14px;
+        }
+        
+    }
+    .big-card{
+        
+        max-width: max-content;
+        align-self: center;
+        background-color: $rider-white;
+        border-radius: .75rem;
+        box-shadow: 0 0 .75rem $rider-black;
+        h2{
+            margin: 15px 0 15px;
+            font-size: 32px;
+            font-weight: bolder;
+            color: $rider-black;
+        }
+        img{
+            
+            width: 100%;
+            margin: 15px 0 15px;
+        }
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            max-width: 90vw;
+        }
+        
+    }
+    @media screen and (min-width: 455px) {
+        .small-card{
+            width: 410px;  
+        }
+        .big-card{
+            width: 410px;
+        }
+    }
+    @media screen and (min-width: 960px){
+        main{
+            padding: 50px 0 50px;
+            
+        }
+        .horizontal-scroll{
+            display: flex;
+            flex-wrap: wrap;
+            overflow-x: none;
+            width: 960px;
+            align-self: center;
+            white-space: normal;
+            padding: 50px 0 50px;
+            justify-content: center;
+        }
+        .small-card{
+            margin:20px;
+        }
+    }
+        
+}
+
+
+    
+
+ 
+
+
+
